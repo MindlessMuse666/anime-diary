@@ -8,7 +8,7 @@
 {% block content %}
     <div class="detail-product d-flex">
         <div class="detail-img">
-            <img src="{% if product.name %}{{ product.image.url }}{% else %}{% static 'img/artefact.png' %}{% endif %}" alt="" class="detail-image">
+            <img src="{% if product.name %}{{ product.image.url }}{% else %}{% static 'img/genshin_entities/artefact.png' %}{% endif %}" alt="" class="detail-image">
         </div>
         <div class="detail description">
             <h2>{{ product.name }}</h2>
@@ -16,11 +16,11 @@
             <p>Description: {{ product.description|linebreaks }}</p>
             {% if product.discount %}
                 <div class="cart-discount d-flex gap-2">
-                    <p class="line">{{ product.price }}</p>
-                    <p>{{ product.sell_price }}</p>
+                    <p class="line">$ {{ product.price }}</p>
+                    <p>$ {{ product.sell_price }}</p>
                 </div>
             {% else %}
-                <p class="price">{{ product.price }}</p>
+                <p class="price">$ {{ product.price }}</p>
             {% endif %}
             <a href="#" class="cart-btn d-flex align-items-center justify-content-center">Add to cart</a>
         </div>
