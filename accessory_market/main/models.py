@@ -12,15 +12,23 @@ class Category(models.Model):
         unique=True
     )
 
+
     class Meta:
         ordering = ['name']
         indexes = [models.Index(fields=['name'])]
         verbose_name = 'category'
         verbose_name_plural = 'categories'
 
-        
-        def __str__(self):
-            return self.name
+
+    def get_absolute_url(self):
+        return reverse(
+            "main:product_list_by_category",
+            args=[self.slug]
+        )
+    
+    
+    def __str__(self):
+        return self.name
 
 
 class Product(models.Model):
