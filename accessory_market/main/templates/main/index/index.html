@@ -8,7 +8,7 @@
         <div class="home-title d-flex flex-column align-items-center">
             <a href="#" class="home-btn">ALL PRODUCTS</a>
         </div>
-        <div class="home-recommendation">
+        <div class="home-recommendation d-flex flex-column align-items-center">
             <div class="rec-title mb-4">
                 <h3><span>Popular Accessories</span></h3>
             </div>
@@ -31,5 +31,5 @@
         </div>
     </section>
     <img src="{% static 'img/logo.png' %}" class="body-logo-top" alt="">
-    <img src="{% static 'img/logo.png' %}" class="body-logo-bottom" alt="">
+    {% comment %} <img src="{% static 'img/logo.png' %}" class="body-logo-bottom" alt=""> {% endcomment %}
 {% endblock content %}

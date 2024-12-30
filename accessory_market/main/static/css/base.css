@@ -41,21 +41,6 @@ h5 {
     font-weight: 600;
 }
 
-.header-container {
-    box-sizing: border-box;
-    max-width: 1400px;
-    margin: 0 auto;
-    justify-content: space-between;
-    padding: 0 15px;
-    align-items: center;
-}
-
-.container {
-    box-sizing: border-box;
-    max-width: 1600px;
-    margin: 0 auto;
-}
-
 .header {
     height: 80px;
     background-color: #fff;
@@ -74,6 +59,21 @@ h5 {
     left: 44.5%;
 }
 
+.header-container {
+    box-sizing: border-box;
+    max-width: 1400px;
+    margin: 0 auto;
+    justify-content: space-between;
+    padding: 0 0; /* 0 15px */
+    align-items: center;
+}
+
+.container {
+    box-sizing: border-box;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
 .home {
     align-content: center;
 }
@@ -81,6 +81,13 @@ h5 {
 .home-title {
     margin-top: 210px;
     margin-bottom: 50px;
+}
+
+.home-cards {
+    justify-content: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    overflow-x: hidden;
 }
 
 .home-card {
@@ -132,29 +139,29 @@ h5 {
 
 .frame-tl {
     position: absolute;
-    left: .5%;
-    bottom: 56%;
+    left: -3%;
+    bottom: 58%;
     z-index: -1;
 }
 
 .frame-tr {
     position: absolute;
-    right: .5%;
-    bottom: 56%;
+    right: -3%;
+    bottom: 58%;
     z-index: -1;
 }
 
 .frame-bl {
     position: absolute;
-    left: .5%;
-    top: 66%;
+    left: -3%;
+    top: 83%;
     z-index: -1;
 }
 
 .frame-br {
     position: absolute;
-    right: .5%;
-    top: 66%;
+    right: -3%;
+    top: 83%;
     z-index: -1;
 }
 
@@ -167,7 +174,6 @@ h5 {
 }
 
 .body-logo-bottom {
-    position: absolute;
     height: 69px;
     width: 108px;
     bottom: 0%;
