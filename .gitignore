@@ -1,3 +1,13 @@
-/venv
-/.vscode
+# Visual Studio Code
+.vscode/
+.idea/
+venv/
+
+# Databases
 db.sqlite3
+
+# pycache
+__pycache__/
+
+# media
+media/

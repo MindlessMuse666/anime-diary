@@ -13,13 +13,6 @@ class Category(models.Model):
     )
 
 
-    class Meta:
-        ordering = ['name']
-        indexes = [models.Index(fields=['name'])]
-        verbose_name = 'category'
-        verbose_name_plural = 'categories'
-
-
     def get_absolute_url(self):
         return reverse(
             "main:product_list_by_category",
@@ -29,6 +22,12 @@ class Category(models.Model):
     
     def __str__(self):
         return self.name
+
+    class Meta:
+        ordering = ['name']
+        indexes = [models.Index(fields=['name'])]
+        verbose_name = 'category'
+        verbose_name_plural = 'categories'
 
 
 class Product(models.Model):

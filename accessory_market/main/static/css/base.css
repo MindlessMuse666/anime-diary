@@ -129,7 +129,7 @@ h5 {
     border: 1px solid #00000027;
     border-radius: 5px;
     background-image: url(../img/buttons/anime_diary/element_button.png);
-    transition: all .4s ease;
+    transition: all .5s ease;
     z-index: 2;
 }
 
@@ -139,29 +139,29 @@ h5 {
 
 .frame-tl {
     position: absolute;
-    left: -3%;
-    bottom: 58%;
+    bottom: 59%;
     z-index: -1;
 }
 
 .frame-tr {
     position: absolute;
-    right: -3%;
-    bottom: 58%;
+    right: 0%;
+    bottom: 59%;
     z-index: -1;
 }
 
 .frame-bl {
     position: absolute;
-    left: -3%;
-    top: 83%;
+    /* top: 83%; */
+    bottom: 0%;
     z-index: -1;
 }
 
 .frame-br {
     position: absolute;
-    right: -3%;
-    top: 83%;
+    right: 0%;
+    bottom: 0%;
+    /* top: 83%; */
     z-index: -1;
 }
 
@@ -169,8 +169,6 @@ h5 {
     position: absolute;
     top: 12.5%;
     left: 44.5%;
-    /* width: 216px;
-    height: 137.33px; */
 }
 
 .body-logo-bottom {
@@ -284,4 +282,18 @@ h5 {
     border: 1px solid #000;
     border-radius: 5px;
     background-image: url(../img/buttons/anime_diary/element_button.png);
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    position: absolute;
+    bottom: -0%;
+    left: 44%;
+    gap: 12px;
+    justify-content: center;
+}
+
+.disabled {
+    opacity: .2;
 }
