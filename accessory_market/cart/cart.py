@@ -11,7 +11,7 @@ class Cart:
         cart = self.session.get(settings.CART_SESSION_ID)
 
         if not cart:
-            cart = self.session(settings.CART_SESSION_ID) = {}
+            cart = self.session[settings.CART_SESSION_ID] = {}
         
         self.cart = cart
     
@@ -68,3 +68,13 @@ class Cart:
 
     def clear(self):
         del self.session[settings.CART_SESSION_ID]
+
+    
+    def get_total_price(self) -> Decimal:
+        total: Decimal = sum(
+            (Decimal(item['price']) - (Decimal(item['price']) * Decimal(item['product'].discount / 100))) * item['quantity']
+                for item in self.cart.values()
+        )
+        total_format: Decimal = format(total, '.2f')
+
+        return total_format

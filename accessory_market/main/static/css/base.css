@@ -297,3 +297,166 @@ h5 {
 .disabled {
     opacity: .2;
 }
+
+.cart-counter-logo {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+}
+
+.cart-quantity {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    font-size: 13px;
+    margin-left: 20px;
+    margin-top: -40px;
+    text-align: center;
+    border: 1px solid #000;
+    border-radius: 20px;
+}
+
+.cart {
+    flex-direction: column;
+}
+
+.cart-title {
+    margin-left: 75px;
+    margin-top: 60px;
+    margin-bottom: 15px;
+}
+
+.cart-cards {
+    /* min-height: 26vh; */
+    max-height: 52vh;
+    width: 750px;
+    overflow-y: auto;
+    margin-left: 75px;
+}
+
+.cart-card {
+    display: flex;
+    /* Сделать длиннее, после создания кастомной кнопки */
+    width: 570px;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid #00000042;
+    border-radius: 10px;
+    /* Стилизовать кнопку */
+    background-image: url(../img/buttons/stock/cfr2.png); 
+    background-repeat: no-repeat;
+}
+
+.cart-card:nth-child(even) {
+    /* Стилизовать кнопку */
+    background-image: url(../img/buttons/stock/cfr1.png);
+    background-repeat: no-repeat;
+}
+
+.cart-card-img img {
+    width: 125px;
+    height: 125px;
+    border: 1 solid #00000042;
+}
+
+.cart-card-name {
+    width: 180px;
+}
+
+.remove-btn {
+    display: flex;
+    /* width: 100px;
+    height: 30px; */
+    box-shadow: none;
+    justify-content: center;
+    justify-items: center;
+    background-color: #fff;
+    border: 1px solid #00000042;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+}
+
+.remove-btn:hover {
+    border: 1px solid #000;
+}
+
+.cart-buttons {
+    margin-top: 15px;
+    margin-left: 75px;
+}
+
+.cart-btn-continue-shopping {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 50px;
+    border: 1px solid #00000042;
+    background-image: url(../img/buttons/anime_diary/element_button.png);
+    border-radius: 5px;
+    transition: all .5s ease;
+}
+
+.cart-btn-continue-shopping:hover {
+    border: 1px solid #000;
+}
+
+.cart-btn-checkout {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 50px;
+    border: 1px solid #00000042;
+    background-image: url(../img/buttons/anime_diary/element_button.png);
+    border-radius: 5px;
+    transition: all .5s ease;
+}
+
+.cart-btn-checkout:hover {
+    border: 1px solid #000;
+}
+
+.cart-card-price {
+    font-size: 16px;
+}
+
+.cart-total-price-ots {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.cart-total-price {
+    margin: 0;
+}
+
+.total {
+    margin-top: 15px;
+    margin-left: 75px;
+}
+
+.cart-form {
+    margin-top: 25px;
+}
+
+.add-to-cart-btn {
+    display: flex;
+    width: 180px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #00000042;
+    border-radius: 5px;
+    margin: 0;
+    transition: all .5s ease-out;
+    margin-top: 25px;
+}
+
+.add-to-cart-btn:hover {
+    border: 1px solid #000;
+}

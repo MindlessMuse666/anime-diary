@@ -8,7 +8,7 @@
 {% block content %}
     <div class="detail-product d-flex">
         <div class="detail-img">
-            <img src="{% if product.name %}{{ product.image.url }}{% else %}{% static 'img/genshin_entities/artefact.png' %}{% endif %}" alt="" class="detail-image">
+            <img src="{% if product.name %}{{ product.image.url }}{% else %}{% static 'img/sato.jpg' %}{% endif %}" alt="" class="detail-image">
         </div>
         <div class="detail description">
             <h2>{{ product.name }}</h2>
@@ -22,7 +22,13 @@
             {% else %}
                 <p class="price">$ {{ product.price }}</p>
             {% endif %}
-            <a href="#" class="cart-btn d-flex align-items-center justify-content-center">Add to cart</a>
+            <form action="{% url "cart:cart_add" product.id %}" class="quantity-form" method="post">
+                <div class="cart-form">
+                    {{ cart_product_form }}
+                    {% csrf_token %}
+                </div>
+                <input type="submit" class="add-to-cart-btn" value="Add to cart">
+            </form>
         </div>
     </div>
 {% endblock content %}
