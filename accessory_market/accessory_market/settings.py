@@ -25,9 +25,7 @@ SECRET_KEY = 'django-insecure-9412x&bmh*7c)e+sfv2vm@yubs@g=#9d@s0p!y8^2ek#5wcl+c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    'localhost', '127.0.0.1'
-]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -39,8 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'main',
     'cart',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -81,8 +81,12 @@ WSGI_APPLICATION = 'accessory_market.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'animediary',
+        'PASSWORD': 'animediary',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 

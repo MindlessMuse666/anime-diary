@@ -138,27 +138,27 @@ h5 {
 }
 
 .frame-tl {
-    position: absolute;
+    position: fixed;
     bottom: 59%;
     z-index: -1;
 }
 
 .frame-tr {
-    position: absolute;
+    position: fixed;
     right: 0%;
     bottom: 59%;
     z-index: -1;
 }
 
 .frame-bl {
-    position: absolute;
+    position: fixed;
     /* top: 83%; */
     bottom: 0%;
     z-index: -1;
 }
 
 .frame-br {
-    position: absolute;
+    position: fixed;
     right: 0%;
     bottom: 0%;
     /* top: 83%; */
