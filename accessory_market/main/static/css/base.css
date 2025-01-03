@@ -4,6 +4,17 @@
     --box-shadow: 0px 1px 1px rgba(0, 0, 0, .363)
 }
 
+@font-face {
+    font-family: anime_ace2;
+    src: url(../fonts/animeace2_0bbcyr.otf);
+}
+
+span {
+    font-family: anime_ace2, sans-serif;
+    font-size: 40px;
+    line-height: 0;
+}
+
 body {
     font-family: "Carrois Gothic", sans-serif;
     font-size: 18px;
@@ -79,7 +90,7 @@ h5 {
 }
 
 .home-title {
-    margin-top: 210px;
+    margin-top: 175px;
     margin-bottom: 50px;
 }
 
@@ -166,17 +177,17 @@ h5 {
 }
 
 .body-logo-top {
-    position: absolute;
+    position: fixed;
     top: 12.5%;
     left: 44.5%;
 }
 
-.body-logo-bottom {
+/* .body-logo-bottom {
     height: 69px;
     width: 108px;
     bottom: 0%;
     left: 44.5%;
-}
+} */
 
 .detail-image {
     width: 650px;
