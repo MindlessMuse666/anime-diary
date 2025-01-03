@@ -176,6 +176,21 @@ h5 {
     z-index: -1;
 }
 
+@media (display-mode: fullscreen) {
+    .frame-tl {
+        position: fixed;
+        bottom: 63%;
+        z-index: -1;
+    }
+    
+    .frame-tr {
+        position: fixed;
+        right: 0%;
+        bottom: 63%;
+        z-index: -1;
+    }
+}
+
 .body-logo-top {
     position: fixed;
     top: 12.5%;
