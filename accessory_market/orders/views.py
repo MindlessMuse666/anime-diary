@@ -1,5 +1,6 @@
-from django.shortcuts import render
-from django.http import HttpRequest, HttpResponse
+from django.shortcuts import render, redirect
+from django.http import HttpRequest
+from django.urls import reverse
 from .models import OrderItem
 from .forms import OrderCreateForm
 from cart.cart import Cart
@@ -7,7 +8,6 @@ from cart.cart import Cart
 
 def order_create(request: HttpRequest):
     cart = Cart(request)
-    render_view: HttpResponse
 
     if request.method == 'POST':
         form = OrderCreateForm(
@@ -19,28 +19,26 @@ def order_create(request: HttpRequest):
             order = form.save()
 
             for item in cart:
+                discounted_price = item['product'].sell_price()
                 OrderItem.objects.create(
                     order=order,
                     product=item['product'],
-                    price=item['price'],
+                    price=discounted_price,
                     quantity=item['quantity']
                 )
-            
+                
             cart.clear()
+            request.session['order_id'] = order.id
 
-            render_view = render(
-                request,
-                'order/created.html',
-                {
-                    'order': order,
-                    'form': form
-                }
+            return redirect(
+                reverse(
+                    'payment:process'
+                )
             )
-
-            return render_view
     else:
         form = OrderCreateForm(request=request)
-        render_view = render(
+        
+        return render(
             request,
             'order/create.html',
             {
@@ -48,5 +46,3 @@ def order_create(request: HttpRequest):
                 'form': form
             }
         )
-
-        return render_view

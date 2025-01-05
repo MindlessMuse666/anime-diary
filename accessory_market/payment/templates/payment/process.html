@@ -1,0 +1,60 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+  Payment Process
+{% endblock %}
+
+{% block content %}
+  <div class="payment-form-container">
+    <h2 class="payment-title">Payment</h2>
+    <div class="payment-cart-container d-flex">
+      <div class="cart-product-cards">
+        {% for item in order.items.all %}
+          {% with product=item.product %}
+            <div class="cart-card d-flex">
+              <div class="cart-card-img">
+                <img src="{% if product.image %}
+                    {{ product.image.url }}
+                  {% else %}
+                    {% static 'img/sato.jpg' %}
+                  {% endif %}"
+                  alt="" />
+              </div>
+              <div class="cart-card-info">
+                <div class="cart-card-name">
+                  <p>{{ product.name }}</p>
+                </div>
+                <div class="cart-card-quantity">
+                  <p>Quantity: {{ item.quantity }}</p>
+                </div>
+              </div>
+              <form action="{% url 'cart:cart_remove' product.id %}" method="post">
+                <input type="submit" value="Remove" class="remove-btn" />
+                {% csrf_token %}
+              </form>
+              <div class="cart-card-price">
+                {% if product.discount %}
+                  <div class="cart-price">
+                    <p class="line">$ {{ product.price }}</p>
+                    <p class="cart-total-price-ots">$ {{ product.sell_price }}</p>
+                  </div>
+                {% else %}
+                  <p class="cart-total-price">$ {{ product.price }}</p>
+                {% endif %}
+              </div>
+            </div>
+          {% endwith %}
+        {% endfor %}
+
+        <form action="{% url 'payment:process' %}" method="post" class="payform">
+          <input type="submit" value="Pay now" class="paynow" />
+          {% csrf_token %}
+        </form>
+      </div>
+      <div class="order-cart-background">
+        {% comment %} <img src="{% static 'img/sato.jpg' %}" class="order-cart-background-image" alt="" /> {% endcomment %}
+      </div>
+    </div>
+  </div>
+{% endblock %}
