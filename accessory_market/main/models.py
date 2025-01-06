@@ -1,13 +1,15 @@
-from django.db import models
+from django.db.models import (Model, Index, ForeignKey, CASCADE,
+        CharField, SlugField, ImageField, TextField, 
+        BooleanField, DateTimeField, DecimalField) 
 from django.urls import reverse
 
 
-class Category(models.Model):
-    name = models.CharField(
+class Category(Model):
+    name = CharField(
         max_length=20,
         unique=True
     )
-    slug = models.SlugField(
+    slug = SlugField(
         max_length=20,
         unique=True
     )
@@ -25,34 +27,34 @@ class Category(models.Model):
 
     class Meta:
         ordering = ['name']
-        indexes = [models.Index(fields=['name'])]
+        indexes = [Index(fields=['name'])]
         verbose_name = 'category'
         verbose_name_plural = 'categories'
 
 
-class Product(models.Model):
-    category = models.ForeignKey(
+class Product(Model):
+    category = ForeignKey(
         Category,
         related_name='products',
-        on_delete=models.CASCADE
+        on_delete=CASCADE
     )
-    name = models.CharField(max_length=50)
-    slug = models.SlugField(max_length=50)
-    image = models.ImageField(
+    name = CharField(max_length=50)
+    slug = SlugField(max_length=50)
+    image = ImageField(
         upload_to='products/%Y/%m/%d',
         blank=True
     )
-    description = models.TextField(blank=True)
-    price = models.DecimalField(
+    description = TextField(blank=True)
+    price = DecimalField(
         max_digits=10,
         decimal_places=2
     )
-    is_available = models.BooleanField(
+    is_available = BooleanField(
         default=True
     )
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
-    discount = models.DecimalField(
+    created = DateTimeField(auto_now_add=True)
+    updated = DateTimeField(auto_now=True)
+    discount = DecimalField(
         default=.00,
         max_digits=4,
         decimal_places=2
@@ -62,9 +64,9 @@ class Product(models.Model):
     class Meta:
         ordering = ['name']
         indexes = [
-            models.Index(fields=['id', 'slug']),
-            models.Index(fields=['name']),
-            models.Index(fields=['-created']),
+            Index(fields=['id', 'slug']),
+            Index(fields=['name']),
+            Index(fields=['-created']),
         ]
 
     
@@ -83,3 +85,19 @@ class Product(models.Model):
         if self.discount:
             return round(self.price - self.price * self.discount / 100, 2)
         return self.price
+    
+    
+class ProductImage(Model):
+    product = ForeignKey(
+        Product,
+        related_name='images',
+        on_delete=CASCADE
+    )
+    image = ImageField(
+        upload_to='product/%Y/%m/%d',
+        blank=True
+    )
+    
+    
+    def __str__(self):
+        return f'{self.product.name} - {self.image.name}'

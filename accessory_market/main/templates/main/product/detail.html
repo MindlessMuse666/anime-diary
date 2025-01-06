@@ -8,14 +8,39 @@
 {% block content %}
   <div class="detail-product d-flex">
     <div class="detail-img">
-      <img src="{% if product.name %}
-          {{ product.image.url }}
-        {% else %}
-          {% static 'img/sato.jpg' %}
-        {% endif %}"
-        alt=""
-        class="detail-image" />
+      {% for image in product.images.all %}
+        <img class="detail-img" src="{{ image.image.url }}" alt="" style="display: none;" data-index="{{ forloop.counter0 }}" />
+      {% endfor %}
+      <div class="image-nav">
+        <button class="left-btn">&lsaquo;</button>
+        <button class="left-btn">&rsaquo;</button>
+      </div>
     </div>
+    <script>
+      const images = document.querySelectorAll('.detail-image')
+      const leftBtn = document.querySelector('.left-btn')
+      const rightBtn = document.querySelector('.right-btn')
+      let currentIndex = 0
+      
+      images[currentIndex].style.display = 'block'
+      
+      if (images.length === 1) {
+        leftBtn.style.display = 'none'
+        rightBtn.style.display = 'none'
+      } else {
+        leftBtn.addEventListener('click', () => {
+          images[currentIndex].style.display = 'none'
+          currentIndex = (currentIndex - 1 + images.length) % images.length
+          images[currentIndex].style.display = 'block'
+        })
+        rightBtn.addEventListener('click', () => {
+          images[currentIndex].style.display = 'none'
+          currentIndex = (currentIndex + 1) % images.length
+          images[currentIndex].style.display = 'block'
+        })
+      }
+    </script>
+
     <div class="detail description">
       <h2>{{ product.name }}</h2>
       <h3>Category: {{ product.category }}</h3>

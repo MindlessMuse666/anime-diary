@@ -3,6 +3,7 @@ from django.db.models import (Model, ForeignKey,
                               EmailField, DateTimeField, 
                               SET_DEFAULT, CASCADE, 
                               Index)
+from django.conf import settings
 from main.models import Product
 from users.models import User
 
@@ -24,6 +25,7 @@ class Order(Model):
     created = DateTimeField(auto_now_add=True)
     updated = DateTimeField(auto_now=True)
     is_paid = BooleanField(default=False)
+    stripe_id = CharField(max_length=250, blank=True)
 
 
     class Meta:
@@ -42,6 +44,18 @@ class Order(Model):
 
         return total_price
     
+    
+    def get_stripe_url(self):
+        if not self.stripe_id:
+            return ''
+        
+        if '_test_' in settings.STRIPE_SECRET_KEY:
+            path = '/test/'
+        else:
+            path = '/'
+        
+        return f'https://dashboard.stripe.com{path}payment/{self.stripe_id}'
+
 
 class OrderItem(Model):
     order = ForeignKey(
