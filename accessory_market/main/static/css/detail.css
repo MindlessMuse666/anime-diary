@@ -1,0 +1,45 @@
+.detail-image {
+  width: 475px;
+  height: 475px;
+  margin-right: 80px;
+}
+
+.image-nav {
+  position: absolute;
+  top: 48.15%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.left-btn, .right-btn {
+  color: #000;
+  background-color: #ffffff00;
+  border: none;
+  padding: 10px 20px;
+  font-size: 2.75rem;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.right-btn:hover {
+  background-color: #00000013;
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.left-btn:hover {
+  background-color: #00000013;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+}
+
+.left-btn {
+  position: absolute;
+  left: 3.1%;
+}
+
+.right-btn {
+  position: absolute;
+  left: 38.9%;
+}

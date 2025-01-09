@@ -5,15 +5,19 @@
   {{ product.name }}
 {% endblock %}
 
+{% block styles %}
+  <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+{% endblock styles %}
+
 {% block content %}
   <div class="detail-product d-flex">
-    <div class="detail-img">
+    <div class="detail-images">
       {% for image in product.images.all %}
-        <img class="detail-img" src="{{ image.image.url }}" alt="" style="display: none;" data-index="{{ forloop.counter0 }}" />
+        <img class="detail-image" src="{{ image.image.url }}" alt="" style="display: none;" data-index="{{ forloop.counter0 }}">
       {% endfor %}
       <div class="image-nav">
         <button class="left-btn">&lsaquo;</button>
-        <button class="left-btn">&rsaquo;</button>
+        <button class="right-btn">&rsaquo;</button>
       </div>
     </div>
     <script>

@@ -1,26 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Carrois+Gothic&display=swap'); 
 
+
 :root {
     --box-shadow: 0px 1px 1px rgba(0, 0, 0, .363)
 }
 
-@font-face {
-    font-family: anime_ace2;
-    src: url(../fonts/animeace2_0bbcyr.otf);
-}
-
-span {
-    font-family: anime_ace2, sans-serif;
-    font-size: 40px;
-    line-height: 0;
-}
 
 body {
-    font-family: "Carrois Gothic", sans-serif;
-    font-size: 18px;
-    padding: 0;
     margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Чтобы footer всегда был снизу */    
     overflow-x: hidden;
+    font-family: "Carrois Gothic", sans-serif;
+    font-size: 1rem;
+    background-color: #f5f5f5;
+    color: #333;
 }
 
 ul {
@@ -34,78 +30,85 @@ a {
 }
 
 h1 {
-    font-size: 48px;
+  font-size: 3.5rem;
 }
 
 h2 {
-    font-size: 48px;
-    font-weight: 600;
+  font-size: 3.5rem;
+  font-weight: 600;
 }
 
 h3 {
-    font-size: 36px;
+  font-size: 2.5rem;
 }
 
 h5 {
-    font-size: 18px;
-    margin: 0;
-    font-weight: 600;
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 600;
 }
 
-.header {
-    height: 80px;
-    background-color: #fff;
-    box-shadow: var(--box-shadow);
+
+/* Шапка */
+header {
+  box-shadow: var(--box-shadow); 
+  padding: 10px 0;
+  background-color: #fff;
 }
+
+header h1 {
+    margin: 0;
+}
+  
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
 
 .header-list {
-    text-transform: uppercase;
+  display: flex;
+  margin: 0;
+  text-transform: uppercase;
+  gap: 2rem;
 }
 
-
+.nav-a {
+  font-size: 1.25rem;
+}
 
 .header-container {
     box-sizing: border-box;
-    max-width: 1400px;
+    max-width: 1375px;
     margin: 0 auto;
     justify-content: space-between;
-    padding: 0 0; /* 0 15px */
+    padding: 0 0;
     align-items: center;
 }
 
+
 .container {
-    box-sizing: border-box;
-    max-width: 1600px;
-    margin: 0 auto;
-}
-
-.home {
-    align-content: center;
-}
-
-.home-title {
-    margin-top: 175px;
-    margin-bottom: 50px;
-}
-
-.home-cards {
-    justify-content: center;
-    margin-left: 50px;
-    margin-right: 50px;
-    overflow-x: hidden;
-}
-
-.home-card {
-    width: 200px;
-    height: 325px;
-    border: 1px solid #00000027;
-    border-radius: 5px;
-    transition: all .5s ease;
-    background-color: #fff;
-}
-
-.home-card:hover {
-    border: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 20px;
+  flex: 1; /* Так контейнер занимает всё доступное пространство */
 }
 
 .title-card {
@@ -124,36 +127,6 @@ h5 {
     font-weight: 700;
     margin-top: -10px;
 }
-
-.home-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 180px;
-    height: 50px;
-    border: 1px solid #00000027;
-    border-radius: 5px;
-    background-image: url(../img/buttons/anime_diary/element_button.png);
-    transition: all .5s ease;
-    z-index: 2;
-}
-
-.home-btn:hover {
-    border: 1px solid #000;
-}
-
-.body-logo-top {
-    position: fixed;
-    top: 12.5%;
-    left: 44.5%;
-}
-
-/* .body-logo-bottom {
-    height: 69px;
-    width: 108px;
-    bottom: 0%;
-    left: 44.5%;
-} */
 
 .detail-image {
     width: 650px;

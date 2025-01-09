@@ -1,42 +1,40 @@
 .frame-tl {
-    position: fixed;
-    bottom: 59%;
-    z-index: -1;
+  position: absolute;
+  bottom: 55%;
+  z-index: -1;
 }
 
 .frame-tr {
-    position: fixed;
-    right: 0%;
-    bottom: 59%;
-    z-index: -1;
+  position: absolute;
+  right: 0%;
+  bottom: 55%;
+  z-index: -1;
 }
 
 .frame-bl {
-    position: fixed;
-    /* top: 83%; */
-    bottom: 0%;
-    z-index: -1;
+  position: absolute;
+  bottom: 0%;
+  z-index: -1;
 }
 
 .frame-br {
-    position: fixed;
-    right: 0%;
-    bottom: 0%;
-    /* top: 83%; */
-    z-index: -1;
+  position: absolute;
+  right: 0%;
+  bottom: 0%;
+  z-index: -1;
 }
 
 @media (display-mode: fullscreen) {
-    .frame-tl {
-        position: fixed;
-        bottom: 63%;
-        z-index: -1;
-    }
-    
-    .frame-tr {
-        position: fixed;
-        right: 0%;
-        bottom: 63%;
-        z-index: -1;
-    }
+  .frame-tl {
+    position: absolute;
+    bottom: 59%;
+    z-index: -1;
+  }
+
+  .frame-tr {
+    position: absolute;
+    right: 0%;
+    bottom: 59%;
+    z-index: -1;
+  }
 }

@@ -1,7 +1,9 @@
 .anime-diary-logo {
-  display: flex; 
-  height: 110px;
-  width: 110px;
-  justify-content: center; 
-  align-items: center;
+  height: 90px;
+  width: 90px;
+}
+
+.body-logo-top {
+  height: 90px;
+  width: 90px;
 }
