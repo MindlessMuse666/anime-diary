@@ -7,11 +7,13 @@
     <title>Anime Diary</title>
 
     {% comment %}bootstrap{% endcomment %}
-    <link rel="stylesheet" href="{% static 'bootstrap\css\bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
 
     {% comment %}css{% endcomment %}
-    <link rel="stylesheet" href="{% static 'css\base.css' %}" />
-    <link rel="stylesheet" href="{% static 'css\frames.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/logo.css' %}">
+    <link rel="stylesheet" href="{% static 'css/basket.css' %}">
+    <link rel="stylesheet" href="{% static 'css/frames.css' %}" />
   </head>
   <body>
     <header class="header sticky-top">
@@ -27,10 +29,10 @@
           </ul>
         </navbar>
         <div class="header-logo">
-          <a href="/shop"><img src="{% static 'img\logo\logo_v1.png' %}" alt="" class="anime-diary-logo" /></a>
+          <a href="/shop"><img src="{% static 'img\logo\logo.jpeg' %}" alt="" class="anime-diary-logo" /></a>
         </div>
         <div class="header-profile pt-2">
-          <a href="{% url 'cart:cart_detail' %}"><img src="{% static 'img/genshin_entities/artefact.png' %}" class="cart-counter-logo" alt="" /></a>
+          <a href="{% url 'cart:cart_detail' %}"><img src="{% static 'img/basket/basket_icon.png' %}" class="cart-counter-logo" alt="" /></a>
 
           {% if user.is_authenticated %}
             <a href="{% url 'users:profile' %}">PROFILE</a>

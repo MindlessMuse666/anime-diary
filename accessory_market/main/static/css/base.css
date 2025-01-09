@@ -62,13 +62,7 @@ h5 {
     text-transform: uppercase;
 }
 
-.anime-diary-logo {
-    position: fixed;
-    height: 69px;
-    width: 108px;
-    top: .8%;
-    left: 44.5%;
-}
+
 
 .header-container {
     box-sizing: border-box;
@@ -279,24 +273,6 @@ h5 {
 
 .disabled {
     opacity: .2;
-}
-
-.cart-counter-logo {
-    width: 35px;
-    height: 35px;
-    margin-right: 10px;
-}
-
-.cart-quantity {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    font-size: 13px;
-    margin-left: 20px;
-    margin-top: -40px;
-    text-align: center;
-    border: 1px solid #000;
-    border-radius: 20px;
 }
 
 .cart {
