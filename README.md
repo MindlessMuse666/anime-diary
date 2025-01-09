@@ -21,15 +21,17 @@
 - Значки, Плакаты, Наклейки
 - Скетчбуки, Блокноты, Дневники
 
-## Интерфейс вебсайта (от 03.01.2025)
+
+## Интерфейс вебсайта (от 10.01.2025)
 ### Главная страница:
-![image](https://github.com/user-attachments/assets/f1949cc2-ca9e-4b7d-81ad-f90f39e906a6)
+![image](https://github.com/user-attachments/assets/3eb771df-cfbe-40f3-bc35-5f9df9c480c5)
 ### Страница магазина (с пагинацией):
-![image](https://github.com/user-attachments/assets/6967ebf9-ca9a-42ff-b9af-bd18a229e002)
+![image](https://github.com/user-attachments/assets/e4b1e13a-2e63-4444-8f07-4f54f9898a1e)
 ### Страница подробного просмотра карточки товара:
-![image](https://github.com/user-attachments/assets/f284fa95-cb7e-4838-81f3-eb1d83bb4d71)
+![image](https://github.com/user-attachments/assets/d550dcc2-21ef-4e18-a6fe-74b50ccd14f0)
 ### Страница корзины:
-![image](https://github.com/user-attachments/assets/9db2da4c-266d-4373-9261-14167901fac4)
+![image](https://github.com/user-attachments/assets/d7d0a626-2e53-4d2c-9205-6e4e43240704)
+
 
 ## Установка и запуск
 1. Склонируйте репозиторий:
